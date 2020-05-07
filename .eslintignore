@@ -1,0 +1,8 @@
+config
+build
+public
+scripts
+node_modules
+*.md
+*.json
+!src/

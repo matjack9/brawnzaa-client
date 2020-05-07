@@ -1,0 +1,66 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": ["prettier"],
+  "plugins": ["@typescript-eslint", "prettier", "react", "react-hooks"],
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "useJSXTextNode": true,
+    "tsconfigRootDir": "."
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true,
+    "mocha": true
+  },
+  "rules": {
+    "strict": 0,
+    "prefer-destructuring": [
+      "warn",
+      {
+        "array": true,
+        "object": true
+      },
+      {
+        "enforceForRenamedProperties": false
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignoreUrls": true,
+        "ignorePattern": "^\\s*import\\s.+"
+      }
+    ],
+    "arrow-parens": 0,
+    "arrow-body-style": 0,
+    "no-debugger": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "curly": ["warn", "all"],
+    "no-alert": "error",
+    "no-unused-expressions": "warn",
+    "no-lonely-if": "warn",
+    "prefer-const": "warn",
+    "no-eval": "error",
+    "no-sparse-arrays": "error",
+    "no-var": "error",
+    "prettier/prettier": "warn",
+    "no-func-assign": "error",
+    "object-shorthand": "warn",
+    "no-console": ["warn", { "allow": ["error", "warn"] }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
