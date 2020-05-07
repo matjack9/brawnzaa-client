@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# B R A W N Z A A
+
+## Planning
+
+- Move static assets to CDN
 
 ## Available Scripts
 
