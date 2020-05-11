@@ -1,4 +1,4 @@
-import { combineReducers, AnyAction } from 'redux';
+import { combineReducers, AnyAction, Reducer } from 'redux';
 import configureStore from 'app/configureStore';
 import authReducer, { LOGOUT_USER } from 'app/authReducer';
 
@@ -6,19 +6,14 @@ const appReducer = combineReducers({
   auth: authReducer,
 });
 
-type AppState = ReturnType<typeof appReducer>;
+export type RootState = ReturnType<typeof appReducer>;
 
-export const rootReducer = (
-  state: AppState,
+export const rootReducer: Reducer = (
+  state: RootState,
   action: AnyAction
-): typeof appReducer => {
+): RootState => {
   if (action.type === LOGOUT_USER) {
-    return (appReducer(
-      configureStore(undefined).getState(),
-      action
-    ) as unknown) as typeof appReducer;
+    return appReducer(configureStore(undefined).getState(), action);
   }
-  return (appReducer(state, action) as unknown) as typeof appReducer;
+  return appReducer(state, action);
 };
-
-export type RootState = ReturnType<typeof rootReducer>;

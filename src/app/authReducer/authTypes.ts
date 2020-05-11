@@ -4,8 +4,8 @@ export const LOGIN_USER = 'LOGIN_USER';
 export const LOGOUT_USER = 'LOGOUT_USER';
 
 export interface AuthState {
-  currentUser: User | null;
-  loginTimestamp: number | null;
+  readonly currentUser: User | null;
+  readonly loginTimestamp: number | null;
 }
 
 interface LoginUserAction {

@@ -1,7 +1,7 @@
 import { applyMiddleware, createStore, compose, StoreEnhancer } from 'redux';
 import thunk from 'redux-thunk';
 import { __DEV__ } from 'common/utils/constants/config';
-import { rootReducer, RootState } from 'app/rootReducer';
+import { rootReducer } from 'app/rootReducer';
 
 const configureStore = (preloadedState = undefined) => {
   const middlewares = [thunk];
@@ -27,7 +27,7 @@ const configureStore = (preloadedState = undefined) => {
   const composedEnhancers = composeEnhancers(...enhancers);
 
   return createStore(
-    (rootReducer as unknown) as RootState,
+    rootReducer,
     preloadedState,
     composedEnhancers as StoreEnhancer<unknown, {}>
   );
