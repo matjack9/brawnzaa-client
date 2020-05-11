@@ -1,3 +1,1 @@
-import { MainNavNoAuthOptions } from './MainNavNoAuthOptions';
-
-export default MainNavNoAuthOptions;
+export { MainNavNoAuthOptions as default } from './MainNavNoAuthOptions';

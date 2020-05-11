@@ -1,3 +1,1 @@
-import { MainNavAuthedOptions } from './MainNavAuthedOptions';
-
-export default MainNavAuthedOptions;
+export { MainNavAuthedOptions as default } from './MainNavAuthedOptions';

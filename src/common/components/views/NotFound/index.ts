@@ -1,3 +1,1 @@
-import { NotFoundView } from './NotFoundView';
-
-export default NotFoundView;
+export { NotFoundView as default } from './NotFoundView';
