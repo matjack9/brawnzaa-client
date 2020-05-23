@@ -9,6 +9,7 @@ describe('<LoadingButton />', () => {
     const button = screen.getByTestId('loading-btn');
     const progressCircle = screen.queryByTestId('loading-btn-progress-circle');
     expect(button).toHaveTextContent(label);
+    expect(button).not.toBeDisabled();
     expect(progressCircle).not.toBeInTheDocument();
   });
 
