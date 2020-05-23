@@ -1,1 +1,1 @@
-export { Copyright as default } from './copyright';
+export { Copyright as default } from './Copyright';
