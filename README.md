@@ -3,6 +3,11 @@
 ## Planning
 
 - Move static assets to CDN
+- Add Privacy Policy & Terms of Service
+- Add tests
+- Add codecov
+- Set up GitHub CI/CD
+- Use project management tool
 
 ## Available Scripts
 
