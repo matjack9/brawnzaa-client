@@ -32,11 +32,12 @@ export const LoadingButton: React.FC<Props> = props => {
   const classes = useStyles();
 
   return (
-    <Button {...rest} disabled={disabled || isLoading}>
+    <Button data-testid="loading-btn" {...rest} disabled={disabled || isLoading}>
       {isLoading ? <Hidden>{children}</Hidden> : children}
       {isLoading ? (
         <CircularProgress
           size={20}
+          data-testid="loading-btn-progress-circle"
           {...CircularProgressProps}
           className={classes.absoluteMiddle}
         />
