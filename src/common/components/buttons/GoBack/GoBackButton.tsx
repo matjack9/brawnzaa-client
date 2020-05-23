@@ -21,6 +21,7 @@ export const GoBackButton: React.FC = () => {
       onClick={() => {
         navigate(-1);
       }}
+      data-testid="go-back-btn"
     >
       <BackIcon className={classes.icon} />
       <span className={classes.callToAction}>Go Back</span>
