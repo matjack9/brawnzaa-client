@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { createStyles, makeStyles } from '@material-ui/core';
 import NavButton from '../../NavButton';
-import { Routes } from 'common/utils/constants/routes';
+import { Route } from 'common/utils/constants/routes';
 import { selectIsLoggedIn } from 'app/authReducer';
 
 const useStyles = makeStyles(theme =>
@@ -32,7 +32,7 @@ export const MainNavNoAuthOptions: React.FC = () => {
           className={classes.action}
           variant="contained"
           color="primary"
-          to={Routes.SIGN_UP}
+          to={Route.SIGN_UP}
         >
           Sign Up
         </NavButton>
@@ -42,7 +42,7 @@ export const MainNavNoAuthOptions: React.FC = () => {
           className={[classes.action, classes.bolderBorder].join(' ')}
           variant="outlined"
           color="secondary"
-          to={Routes.LOG_IN}
+          to={Route.LOG_IN}
         >
           Log In
         </NavButton>

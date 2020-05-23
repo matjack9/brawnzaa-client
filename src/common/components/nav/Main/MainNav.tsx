@@ -6,7 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import NavButton from '../NavButton';
 import NoAuthOptions from './NoAuthOptions';
 import AuthedOptions from './AuthedOptions';
-import { Routes } from 'common/utils/constants/routes';
+import { Route } from 'common/utils/constants/routes';
 import { selectIsLoggedIn } from 'app/authReducer';
 import brawnzaa from 'static/assets/logos/brawnzaa-logo.png';
 
@@ -35,22 +35,22 @@ export const MainNav: React.FC = () => {
             </NavButton>
           </li>
           <li className={classes.option}>
-            <NavButton color="inherit" to={Routes.FEATS}>
+            <NavButton color="inherit" to={Route.FEATS}>
               Feats
             </NavButton>
           </li>
           <li className={classes.option}>
-            <NavButton color="inherit" to={Routes.MEDIA}>
+            <NavButton color="inherit" to={Route.MEDIA}>
               Media
             </NavButton>
           </li>
           <li className={classes.option}>
-            <NavButton color="inherit" to={Routes.EVENTS}>
+            <NavButton color="inherit" to={Route.EVENTS}>
               Events
             </NavButton>
           </li>
           <li className={classes.option}>
-            <NavButton color="inherit" to={Routes.LEADERBOARD}>
+            <NavButton color="inherit" to={Route.LEADERBOARD}>
               Leaderboard
             </NavButton>
           </li>
