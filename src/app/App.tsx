@@ -12,6 +12,7 @@ import MainNav from 'common/components/nav/Main';
 import MainFooter from 'common/components/footer/Main';
 import NotFound from 'common/components/views/NotFound';
 import Home from 'features/home/Home';
+import EasterEgg from 'common/components/EasterEgg';
 
 const store = configureStore();
 
@@ -38,6 +39,7 @@ const App: React.FC = () => {
           <CssBaseline />
           <div className={classes.root}>
             <MainNav />
+            <EasterEgg />
             <Container component="main" className={classes.main}>
               <Router>
                 <Home path={Route.ROOT} />

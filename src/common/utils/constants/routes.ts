@@ -5,6 +5,7 @@ export enum ExternalURL {
   YOUTUBE = 'https://www.youtube.com',
   SNAPCHAT = 'https://www.snapchat.com',
   TWITTER_TIMELINE_EMBED = 'https://twitter.com/brawnzaa?ref_src=twsrc%5Etfw',
+  PLATZINUM = 'https://www.youtube.com/embed/s6H-xs0fPyM?start=21',
 }
 
 export enum Route {
