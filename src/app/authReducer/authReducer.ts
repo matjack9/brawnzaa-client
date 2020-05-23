@@ -1,7 +1,7 @@
 import { AuthState, AuthActionTypes, LOGIN_USER } from './authTypes';
 
 const initialState: AuthState = {
-  currentUser: null,
+  user: null,
   loginTimestamp: null,
 };
 
@@ -13,7 +13,7 @@ export const authReducer = (
     case LOGIN_USER:
       return {
         ...state,
-        currentUser: action.payload,
+        user: action.payload,
         loginTimestamp: action.meta.timestamp,
       };
     default:

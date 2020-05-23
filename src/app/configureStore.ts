@@ -1,9 +1,9 @@
 import { applyMiddleware, createStore, compose, StoreEnhancer } from 'redux';
 import thunk from 'redux-thunk';
 import { __DEV__ } from 'common/utils/constants/config';
-import { rootReducer } from 'app/rootReducer';
+import { rootReducer, RootState } from 'app/rootReducer';
 
-const configureStore = (preloadedState = undefined) => {
+const configureStore = (preloadedState: RootState | undefined = undefined) => {
   const middlewares = [thunk];
 
   if (__DEV__) {
