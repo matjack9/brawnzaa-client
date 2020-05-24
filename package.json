@@ -20,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject",
     "format": "prettier --write \"**/*.+(ts|tsx|json|css|md)\"",
     "lint": "eslint .",
@@ -42,11 +42,11 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
+    "@testing-library/jest-dom": "^5.8.0",
+    "@testing-library/react": "^10.0.4",
+    "@testing-library/user-event": "^10.3.5",
+    "@types/jest": "^25.2.3",
+    "@types/node": "^14.0.5",
     "@types/reach__router": "^1.3.5",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
@@ -58,6 +58,7 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^4.0.0",
     "husky": "^4.2.5",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
     "lint-staged": "^10.2.2",
     "prettier": "^2.0.5",
     "redux-devtools-extension": "^2.13.8",
