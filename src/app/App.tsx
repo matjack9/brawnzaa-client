@@ -10,6 +10,7 @@ import theme from 'common/styles/theme';
 import { Route } from 'common/utils/constants/routes';
 import MainNav from 'common/components/nav/Main';
 import MainFooter from 'common/components/footer/Main';
+import ErrorBoundary from 'common/components/ErrorBoundary';
 import NotFound from 'common/components/views/NotFound';
 import Home from 'features/home/Home';
 import EasterEgg from 'common/components/EasterEgg';
@@ -41,10 +42,12 @@ const App: React.FC = () => {
             <MainNav />
             <EasterEgg />
             <Container component="main" className={classes.main}>
-              <Router>
-                <Home path={Route.ROOT} />
-                <NotFound default />
-              </Router>
+              <ErrorBoundary>
+                <Router>
+                  <Home path={Route.ROOT} />
+                  <NotFound default />
+                </Router>
+              </ErrorBoundary>
             </Container>
           </div>
           <MainFooter />
