@@ -50,6 +50,7 @@ export const Crash: React.FC = () => {
             size="large"
             onClick={handleRepair}
             startIcon={<RepairIcon />}
+            data-testid="crash-repair-btn"
           >
             Repair
           </LoadingButton>
