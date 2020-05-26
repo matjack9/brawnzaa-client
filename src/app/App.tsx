@@ -8,6 +8,7 @@ import Container from '@material-ui/core/Container';
 import configureStore from 'app/configureStore';
 import theme from 'common/styles/theme';
 import { Route } from 'common/utils/constants/routes';
+import Skeleton from 'common/components/views/Skeleton';
 import MainNav from 'common/components/nav/Main';
 import MainFooter from 'common/components/footer/Main';
 import ErrorBoundary from 'common/components/ErrorBoundary';
@@ -26,7 +27,7 @@ const useStyles = makeStyles(theme =>
     },
     main: {
       marginTop: theme.spacing(8),
-      marginBottom: theme.spacing(2),
+      marginBottom: theme.spacing(16),
     },
   })
 );
@@ -43,10 +44,12 @@ const App: React.FC = () => {
             <EasterEgg />
             <Container component="main" className={classes.main}>
               <ErrorBoundary>
-                <Router>
-                  <Home path={Route.ROOT} />
-                  <NotFound default />
-                </Router>
+                <React.Suspense fallback={<Skeleton.Generic />}>
+                  <Router>
+                    <Home path={Route.ROOT} />
+                    <NotFound default />
+                  </Router>
+                </React.Suspense>
               </ErrorBoundary>
             </Container>
           </div>
