@@ -40,8 +40,8 @@ const useStyles = makeStyles(theme =>
       opacity: 0.75,
     },
     link: { '&:hover': { opacity: 1 } },
-    section: { margin: theme.spacing(4, 0) },
-    minorSection: { margin: theme.spacing(0, 0, 2) },
+    section: { margin: theme.spacing(6, 0) },
+    minorSection: { margin: theme.spacing(1, 0, 5), width: '100%' },
     noGutterBottom: { marginBottom: 0 },
   })
 );
@@ -174,31 +174,40 @@ export const MainFooter: React.FC = () => {
           </Grid>
         </Grid>
         <Container maxWidth="sm">
-          <Typography
-            className={[classes.primary, classes.minorSection].join(' ')}
-            variant="caption"
-            align="center"
-            display="block"
-            gutterBottom
+          <Grid
+            container
+            justify="center"
+            spacing={1}
+            className={classes.minorSection}
           >
-            <FooterLink
-              to={getAbsoluteRoute(Route.POLICY, PolicyRoute.TERMS_OF_SERVICE)}
-            >
-              Terms of Service
-            </FooterLink>{' '}
-            |{' '}
-            <FooterLink
-              to={getAbsoluteRoute(Route.POLICY, PolicyRoute.PRIVACY_POLICY)}
-            >
-              Privacy Policy
-            </FooterLink>{' '}
-            |{' '}
-            <FooterLink
-              to={getAbsoluteRoute(Route.POLICY, PolicyRoute.COOKIE_POLICY)}
-            >
-              Cookie Policy
-            </FooterLink>
-          </Typography>
+            <Grid container item justify="center" xs={3}>
+              <FooterLink
+                to={getAbsoluteRoute(Route.POLICY, PolicyRoute.TERMS_OF_SERVICE)}
+              >
+                Terms of Service
+              </FooterLink>
+            </Grid>
+            <Grid item xs="auto">
+              <span className={classes.secondary}>|</span>
+            </Grid>
+            <Grid container item justify="center" xs={3}>
+              <FooterLink
+                to={getAbsoluteRoute(Route.POLICY, PolicyRoute.PRIVACY_POLICY)}
+              >
+                Privacy Policy
+              </FooterLink>
+            </Grid>
+            <Grid item xs="auto">
+              <span className={classes.secondary}>|</span>
+            </Grid>
+            <Grid container item justify="center" xs={3}>
+              <FooterLink
+                to={getAbsoluteRoute(Route.POLICY, PolicyRoute.COOKIE_POLICY)}
+              >
+                Cookie Policy
+              </FooterLink>
+            </Grid>
+          </Grid>
           <Typography
             className={classes.secondary}
             variant="caption"

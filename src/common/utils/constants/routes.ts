@@ -16,6 +16,7 @@ export enum EventsRoute {
 }
 
 export enum HelpRoute {
+  ROOT = '/',
   ABOUT = 'about',
   FAQ = 'faq',
   GUIDE = 'guide',
@@ -24,6 +25,7 @@ export enum HelpRoute {
 }
 
 export enum PolicyRoute {
+  ROOT = '/',
   TERMS_OF_SERVICE = 'terms',
   PRIVACY_POLICY = 'privacy',
   COOKIE_POLICY = 'cookies',
