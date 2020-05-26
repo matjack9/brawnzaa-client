@@ -6,7 +6,7 @@ const ErrorView = () => {
   throw 'bigly error';
 };
 
-/* ignore error in console */
+/* suppress error in console */
 jest.spyOn(console, 'error').mockImplementation(() => {});
 
 describe('<ErrorBoundary />', () => {
