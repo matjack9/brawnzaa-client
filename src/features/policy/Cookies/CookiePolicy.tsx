@@ -3,7 +3,7 @@ import { RouteComponentProps } from '@reach/router';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-import { ExternalURL, Email } from 'common/utils/constants/routes';
+import { ExternalURL, Email } from 'common/utils/constants/urls';
 
 export const CookiePolicy: React.FC<RouteComponentProps> = () => (
   <Container maxWidth="lg">

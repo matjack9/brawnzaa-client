@@ -22,9 +22,9 @@ import {
   HelpRoute,
   EventsRoute,
   PolicyRoute,
-  ExternalURL,
 } from 'common/utils/constants/routes';
-import { getAbsoluteRoute } from 'common/utils/router';
+import { ExternalURL } from 'common/utils/constants/urls';
+import { getAbsoluteRoute } from 'common/utils/routing';
 import red from '@material-ui/core/colors/red';
 
 const useStyles = makeStyles(theme =>

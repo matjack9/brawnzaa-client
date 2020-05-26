@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import { TransitionProps } from '@material-ui/core/transitions';
-import { ExternalURL } from 'common/utils/constants/routes';
+import { ExternalURL } from 'common/utils/constants/urls';
 import useKonamiCode from 'common/hooks/useKonamiCode';
 
 const useStyles = makeStyles({
