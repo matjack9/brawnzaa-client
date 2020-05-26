@@ -35,28 +35,30 @@ const useStyles = makeStyles(theme =>
 const App: React.FC = () => {
   const classes = useStyles();
   return (
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <>
-          <CssBaseline />
-          <div className={classes.root}>
-            <MainNav />
-            <EasterEgg />
-            <Container component="main" className={classes.main}>
-              <ErrorBoundary>
-                <React.Suspense fallback={<Skeleton.Generic />}>
-                  <Router>
-                    <Home path={Route.ROOT} />
-                    <NotFound default />
-                  </Router>
-                </React.Suspense>
-              </ErrorBoundary>
-            </Container>
-          </div>
-          <MainFooter />
-        </>
-      </ThemeProvider>
-    </Provider>
+    <ErrorBoundary>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <>
+            <CssBaseline />
+            <div className={classes.root}>
+              <MainNav />
+              <EasterEgg />
+              <Container component="main" className={classes.main}>
+                <ErrorBoundary>
+                  <React.Suspense fallback={<Skeleton.Generic />}>
+                    <Router>
+                      <Home path={Route.ROOT} />
+                      <NotFound default />
+                    </Router>
+                  </React.Suspense>
+                </ErrorBoundary>
+              </Container>
+            </div>
+            <MainFooter />
+          </>
+        </ThemeProvider>
+      </Provider>
+    </ErrorBoundary>
   );
 };
 
