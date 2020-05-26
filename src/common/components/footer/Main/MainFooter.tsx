@@ -21,6 +21,7 @@ import {
   Route,
   HelpRoute,
   EventsRoute,
+  PolicyRoute,
   ExternalURL,
 } from 'common/utils/constants/routes';
 import { getAbsoluteRoute } from 'common/utils/router';
@@ -33,23 +34,27 @@ const useStyles = makeStyles(theme =>
       marginTop: 'auto',
       background: `linear-gradient(45deg, ${theme.palette.primary.main} 30%, ${theme.palette.secondary.main} 90%)`,
     },
-    header: { color: theme.palette.common.white },
+    primary: { color: theme.palette.common.white },
     secondary: {
       color: theme.palette.common.white,
       opacity: 0.75,
     },
     link: { '&:hover': { opacity: 1 } },
     section: { margin: theme.spacing(4, 0) },
+    minorSection: { margin: theme.spacing(0, 0, 2) },
     noGutterBottom: { marginBottom: 0 },
-    captionWidth: { width: '8em' },
-    spaced: { margin: theme.spacing(0, 1) },
   })
 );
 
 const Header: React.FC<React.PropsWithChildren<TypographyProps>> = props => {
   const classes = useStyles();
   return (
-    <Typography variant="h6" className={classes.header} display="block" {...props} />
+    <Typography
+      variant="h6"
+      className={classes.primary}
+      display="block"
+      {...props}
+    />
   );
 };
 
@@ -169,32 +174,31 @@ export const MainFooter: React.FC = () => {
           </Grid>
         </Grid>
         <Container maxWidth="sm">
-          <Grid container justify="center">
-            <Grid item className={classes.captionWidth}>
-              <Typography variant="caption" align="right" paragraph>
-                {' '}
-                <FooterLink
-                  to={getAbsoluteRoute(Route.HELP, HelpRoute.TERMS_OF_SERVICE)}
-                >
-                  Terms of Service
-                </FooterLink>
-              </Typography>
-            </Grid>
-            <Grid item className={classes.spaced}>
-              <Typography variant="caption" align="center" paragraph>
-                <span className={classes.secondary}> | </span>
-              </Typography>
-            </Grid>
-            <Grid item className={classes.captionWidth}>
-              <Typography variant="caption" align="left" paragraph>
-                <FooterLink
-                  to={getAbsoluteRoute(Route.HELP, HelpRoute.PRIVACY_POLICY)}
-                >
-                  Privacy Policy
-                </FooterLink>
-              </Typography>
-            </Grid>
-          </Grid>
+          <Typography
+            className={[classes.primary, classes.minorSection].join(' ')}
+            variant="caption"
+            align="center"
+            display="block"
+            gutterBottom
+          >
+            <FooterLink
+              to={getAbsoluteRoute(Route.POLICY, PolicyRoute.TERMS_OF_SERVICE)}
+            >
+              Terms of Service
+            </FooterLink>{' '}
+            |{' '}
+            <FooterLink
+              to={getAbsoluteRoute(Route.POLICY, PolicyRoute.PRIVACY_POLICY)}
+            >
+              Privacy Policy
+            </FooterLink>{' '}
+            |{' '}
+            <FooterLink
+              to={getAbsoluteRoute(Route.POLICY, PolicyRoute.COOKIE_POLICY)}
+            >
+              Cookie Policy
+            </FooterLink>
+          </Typography>
           <Typography
             className={classes.secondary}
             variant="caption"

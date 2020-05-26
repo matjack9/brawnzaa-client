@@ -11,6 +11,10 @@ import NotFound from 'common/components/views/NotFound';
 import Home from 'features/home/Home';
 import EasterEgg from 'common/components/EasterEgg';
 
+const Policy = React.lazy(() =>
+  import(/* webpackChunkName: 'policy' */ 'features/policy')
+);
+
 const useStyles = makeStyles(theme =>
   createStyles({
     root: {
@@ -37,6 +41,7 @@ export const MainRoutes: React.FC<RouteComponentProps> = () => {
             <React.Suspense fallback={<Skeleton.Generic />}>
               <Router>
                 <Home path={Route.ROOT} />
+                <Policy path={Route.POLICY + '/*'} />
                 <NotFound default />
               </Router>
             </React.Suspense>
