@@ -8,11 +8,11 @@ import Hidden from 'common/components/Hidden';
 
 const useStyles = makeStyles(() => ({
   absoluteMiddle: {
-    marginTop: -12,
-    marginLeft: -12,
+    position: 'absolute',
     top: '50%',
     left: '50%',
-    position: 'absolute',
+    marginTop: -12,
+    marginLeft: -12,
   },
 }));
 
@@ -26,13 +26,26 @@ export const LoadingButton: React.FC<Props> = props => {
     isLoading,
     children,
     disabled,
+    startIcon = undefined,
+    endIcon = undefined,
     CircularProgressProps = {},
     ...rest
   } = props;
   const classes = useStyles();
 
+  const maybeHide = (icon: React.ReactNode) =>
+    isLoading ? <Hidden>{icon}</Hidden> : icon;
+  const maybeStartIcon = startIcon ? maybeHide(startIcon) : startIcon;
+  const maybeEndIcon = startIcon ? maybeHide(endIcon) : endIcon;
+
   return (
-    <Button data-testid="loading-btn" {...rest} disabled={disabled || isLoading}>
+    <Button
+      data-testid="loading-btn"
+      {...rest}
+      startIcon={maybeStartIcon}
+      endIcon={maybeEndIcon}
+      disabled={disabled || isLoading}
+    >
       {isLoading ? <Hidden>{children}</Hidden> : children}
       {isLoading ? (
         <CircularProgress
