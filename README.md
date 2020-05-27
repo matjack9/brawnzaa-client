@@ -1,3 +1,5 @@
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
 # BRAWNZAA
 
 Open-source frontend of Brawnzaa web application
@@ -5,12 +7,12 @@ Open-source frontend of Brawnzaa web application
 ## Planning
 
 - Implement auth (including skeletons)
-- Add e2e test (Cypress)
+- Add e2e tests (Cypress)
 - Add logging
 - Deploy
 - Set up GitHub CI/CD
 - Add codecov
-- Add GitHub badges: codecov, license, website up, version, build status
+- Add GitHub badges: codecov, website up, version, build status
 - Set up project management tool
 - Move static assets to CDN
 - SEO
