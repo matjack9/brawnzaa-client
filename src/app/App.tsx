@@ -5,8 +5,18 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import configureStore from 'app/configureStore';
 import theme from 'common/styles/theme';
+import { Route } from 'common/utils/constants/routes';
 import ErrorBoundary from 'common/components/ErrorBoundary';
+import Skeleton from 'common/components/views/Skeleton';
 import MainRoutes from 'app/MainRoutes';
+
+const Signup = React.lazy(() =>
+  import(/* webpackChunkName: 'signup' */ 'features/signup')
+);
+
+const Login = React.lazy(() =>
+  import(/* webpackChunkName: 'login' */ 'features/login')
+);
 
 const store = configureStore();
 
@@ -16,9 +26,13 @@ const App: React.FC = () => (
       <ThemeProvider theme={theme}>
         <>
           <CssBaseline />
-          <Router>
-            <MainRoutes path="/*" />
-          </Router>
+          <React.Suspense fallback={<Skeleton.Generic />}>
+            <Router>
+              <Signup path={Route.SIGN_UP} />
+              <Login path={Route.LOG_IN} />
+              <MainRoutes path="/*" />
+            </Router>
+          </React.Suspense>
         </>
       </ThemeProvider>
     </Provider>

@@ -10,13 +10,24 @@ export enum Route {
   POLICY = '/policy',
 }
 
+export enum FeatsRoute {
+  ROOT = '/',
+}
+
+export enum MediaRoute {
+  ROOT = '/',
+}
+
 export enum EventsRoute {
   ROOT = '/',
   PAST = 'past',
 }
 
-export enum HelpRoute {
+export enum LeaderboardRoute {
   ROOT = '/',
+}
+
+export enum HelpRoute {
   ABOUT = 'about',
   FAQ = 'faq',
   GUIDE = 'guide',
@@ -25,7 +36,6 @@ export enum HelpRoute {
 }
 
 export enum PolicyRoute {
-  ROOT = '/',
   TERMS_OF_SERVICE = 'terms',
   PRIVACY_POLICY = 'privacy',
   COOKIE_POLICY = 'cookies',
