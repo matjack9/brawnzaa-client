@@ -6,7 +6,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import configureStore from 'app/configureStore';
 import theme from 'common/styles/theme';
 import { Route } from 'common/utils/constants/routes';
-import ErrorBoundary from 'common/components/ErrorBoundary';
+import ErrorBoundary from 'common/components/wrappers/ErrorBoundary';
 import Skeleton from 'common/components/views/Skeleton';
 import MainRoutes from 'app/MainRoutes';
 

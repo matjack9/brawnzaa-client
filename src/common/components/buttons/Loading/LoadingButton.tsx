@@ -4,7 +4,7 @@ import Button, { ButtonProps } from '@material-ui/core/Button';
 import CircularProgress, {
   CircularProgressProps,
 } from '@material-ui/core/CircularProgress';
-import Hidden from 'common/components/Hidden';
+import Hidden from 'common/components/wrappers/Hidden';
 
 const useStyles = makeStyles(() => ({
   absoluteMiddle: {

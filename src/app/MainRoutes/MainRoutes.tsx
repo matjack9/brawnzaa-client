@@ -3,13 +3,13 @@ import { Router, RouteComponentProps } from '@reach/router';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Route } from 'common/utils/constants/routes';
-import ErrorBoundary from 'common/components/ErrorBoundary';
+import ErrorBoundary from 'common/components/wrappers/ErrorBoundary';
 import Skeleton from 'common/components/views/Skeleton';
 import MainNav from 'common/components/nav/Main';
 import MainFooter from 'common/components/footer/Main';
 import NotFound from 'common/components/views/NotFound';
 import Home from 'features/home';
-import EasterEgg from 'common/components/EasterEgg';
+import EasterEgg from 'common/components/misc/EasterEgg';
 
 const Feats = React.lazy(() =>
   import(/* webpackChunkName: 'feats' */ 'features/feats')
