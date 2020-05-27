@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { RouteComponentProps } from '@reach/router';
 
@@ -31,21 +32,31 @@ const Countdown: React.FC<{ date: number }> = props => {
       align="center"
       color="primary"
       gutterBottom
-      style={{ margin: '1em' }}
     >
       {`${days}d ${hours}h ${minutes}m ${seconds}s`}
     </Typography>
   );
 };
 
-export const Home: React.FC<RouteComponentProps> = () => (
-  <>
-    <Typography variant="h1" align="center" gutterBottom>
-      B R A W N Z A A
-    </Typography>
-    <Typography variant="h2" component="p" align="center" gutterBottom>
-      a feat of strength
-    </Typography>
-    <Countdown date={DATE} />
-  </>
+const useStyles = makeStyles(() =>
+  createStyles({
+    distinguish: { padding: '3em' },
+  })
 );
+
+export const Home: React.FC<RouteComponentProps> = () => {
+  const classes = useStyles();
+  return (
+    <>
+      <Typography variant="h1" align="center" gutterBottom>
+        B R A W N Z A A
+      </Typography>
+      <Typography variant="h2" component="p" align="center" gutterBottom>
+        a feat of strength
+      </Typography>
+      <div className={classes.distinguish}>
+        <Countdown date={DATE} />
+      </div>
+    </>
+  );
+};
