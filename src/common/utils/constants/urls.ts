@@ -1,10 +1,10 @@
 export enum ExternalURL {
   BRAWNZAA = 'https://www.brawnzaa.com',
-  FACEBOOK = 'https://www.facebook.com',
+  FACEBOOK = 'https://www.facebook.com/brawnzaa',
   TWITTER = 'https://twitter.com/brawnzaa',
   INSTAGRAM = 'https://www.instagram.com/brawnzaa',
-  YOUTUBE = 'https://www.youtube.com',
-  SNAPCHAT = 'https://www.snapchat.com',
+  YOUTUBE = 'https://www.youtube.com/channel/UCSVYktsGKFQXi3cnVzu_aQQ',
+  SNAPCHAT = 'https://www.snapchat.com/add/brawnzaa',
   TWITTER_TIMELINE_EMBED = 'https://twitter.com/brawnzaa?ref_src=twsrc%5Etfw',
   PLATZINUM = 'https://www.youtube.com/embed/s6H-xs0fPyM?start=21',
   COOKIE_INFO = 'https://www.cookieconsent.com/what-are-cookies/',
