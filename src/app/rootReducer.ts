@@ -1,6 +1,6 @@
 import { combineReducers, AnyAction, Reducer } from 'redux';
 import configureStore from 'app/configureStore';
-import authReducer, { LOGOUT_USER } from 'app/authReducer';
+import authReducer, { LOGOUT_USER } from 'app/reducers/authReducer';
 
 const appReducer = combineReducers({
   auth: authReducer,

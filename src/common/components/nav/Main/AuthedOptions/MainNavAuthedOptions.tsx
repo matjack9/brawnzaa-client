@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { createStyles, makeStyles } from '@material-ui/core';
-import { selectIsLoggedIn } from 'app/authReducer';
+import { selectIsLoggedIn } from 'app/reducers/authReducer';
 
 const useStyles = makeStyles(() =>
   createStyles({
