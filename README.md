@@ -1,4 +1,4 @@
-# B R A W N Z A A
+# BRAWNZAA
 
 Open-source frontend of Brawnzaa web application
 
