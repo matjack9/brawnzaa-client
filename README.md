@@ -1,13 +1,19 @@
 # B R A W N Z A A
 
+Open-source frontend of Brawnzaa web application
+
 ## Planning
 
-- Move static assets to CDN
-- Add Privacy Policy & Terms of Service
-- Add tests
-- Add codecov
+- Implement auth (including skeletons)
+- Add e2e test (Cypress)
+- Add logging
+- Deploy
 - Set up GitHub CI/CD
-- Use project management tool
+- Add codecov
+- Add GitHub badges: codecov, license, website up, version, build status
+- Set up project management tool
+- Move static assets to CDN
+- SEO
 
 ## Available Scripts
 
