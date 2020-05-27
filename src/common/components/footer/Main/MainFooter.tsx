@@ -170,7 +170,7 @@ export const MainFooter: React.FC = () => {
             <IconLink icon={faSnapchatSquare} url={ExternalURL.SNAPCHAT} />
           </Grid>
           <Grid item>
-            <IconLink icon={faYoutubeSquare} url={ExternalURL.SNAPCHAT} />
+            <IconLink icon={faYoutubeSquare} url={ExternalURL.YOUTUBE} />
           </Grid>
         </Grid>
         <Container maxWidth="sm">
