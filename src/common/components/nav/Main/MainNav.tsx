@@ -8,7 +8,7 @@ import NoAuthOptions from './NoAuthOptions';
 import AuthedOptions from './AuthedOptions';
 import { Route } from 'common/utils/constants/routes';
 import { selectIsLoggedIn } from 'app/authReducer';
-import brawnzaa from 'static/assets/logos/brawnzaa-logo.png';
+import brawnzaa from 'assets/logos/brawnzaa-logo.png';
 
 const useStyles = makeStyles(theme =>
   createStyles({
