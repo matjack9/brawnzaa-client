@@ -24,7 +24,7 @@ import {
   PolicyRoute,
 } from 'common/utils/constants/routes';
 import { ExternalURL } from 'common/utils/constants/urls';
-import { getAbsoluteRoute } from 'common/utils/routing';
+import { getAbsoluteRoute } from 'common/utils/routes';
 import red from '@material-ui/core/colors/red';
 
 const useStyles = makeStyles(theme =>
