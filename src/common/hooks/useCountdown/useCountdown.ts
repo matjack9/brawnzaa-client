@@ -10,7 +10,7 @@ export const useCountdown = (datetime: number, interval: number = 1000) => {
     return () => {
       clearInterval(tick);
     };
-  }, []);
+  }, [interval]);
 
   return datetime - now;
 };
