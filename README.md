@@ -16,6 +16,7 @@ Open-source frontend of Brawnzaa web application
 - Set up project management tool
 - Move static assets to CDN
 - SEO
+- Add feature flagging
 
 ## Available Scripts
 
