@@ -2,9 +2,9 @@ name: CI - Run Unit & Integration Tests
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   install-and-test:
@@ -30,7 +30,7 @@ jobs:
       - name: Install Dependencies
         if: steps.cache-dependencies.outputs.cache-hit != 'true'
         run: |
-          yarn install --force --non-interactive
+          yarn install --force --non-interactive --no-optional
         env:
           CI: true
       - name: Run Integration Tests
