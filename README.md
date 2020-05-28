@@ -12,8 +12,7 @@ Open-source frontend of Brawnzaa web application
 - Add logging
 - Deploy
 - Set up GitHub CI/CD
-- Add codecov
-- Add GitHub badges: codecov, website up, version, build status
+- Add GitHub badges: website up, version, build status
 - Set up project management tool
 - Move static assets to CDN
 - SEO
