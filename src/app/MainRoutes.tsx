@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme =>
 
 const WILDCARD = '/*';
 
-export const MainRoutes: React.FC<RouteComponentProps> = () => {
+const MainRoutes: React.FC<RouteComponentProps> = () => {
   const classes = useStyles();
   return (
     <>
@@ -79,3 +79,5 @@ export const MainRoutes: React.FC<RouteComponentProps> = () => {
     </>
   );
 };
+
+export default MainRoutes;
