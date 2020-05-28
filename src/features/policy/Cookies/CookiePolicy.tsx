@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import { ExternalURL, Email } from 'common/utils/constants/urls';
-import BackToTopButton from 'common/components/buttons/BackToTop';
+import ScrollToTopButton from 'common/components/buttons/ScrollToTop';
 
 export const CookiePolicy: React.FC<RouteComponentProps> = () => (
   <Container maxWidth="lg">
@@ -213,7 +213,7 @@ export const CookiePolicy: React.FC<RouteComponentProps> = () => (
     </ul>
     <Grid container justify="flex-end">
       <Grid item>
-        <BackToTopButton />
+        <ScrollToTopButton />
       </Grid>
     </Grid>
   </Container>

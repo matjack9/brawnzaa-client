@@ -2,7 +2,7 @@ import * as React from 'react';
 import Button, { ButtonProps } from '@material-ui/core/Button';
 import TopIcon from '@material-ui/icons/ExpandLess';
 
-export const BackToTopButton: React.FC<ButtonProps> = props => {
+export const ScrollToTopButton: React.FC<ButtonProps> = props => {
   const handleClick = () => {
     window.scrollTo({
       top: 0,

@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { BackToTopButton } from '../BackToTopButton';
+import { ScrollToTopButton } from '../ScrollToTopButton';
 
 global.scrollTo = jest.fn();
 
-describe('<BackToTopButton />', () => {
+describe('<ScrollToTopButton />', () => {
   it('scrolls to top on click', () => {
-    render(<BackToTopButton />);
+    render(<ScrollToTopButton />);
     expect(global.scrollTo).not.toHaveBeenCalled();
     const button = screen.getByTestId('back-to-top-btn');
     fireEvent.click(button);
