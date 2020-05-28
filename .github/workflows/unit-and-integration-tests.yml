@@ -1,0 +1,41 @@
+name: CI - Run Unit & Integration Tests
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  install-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [11.x]
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Cache NPM Dependencies
+        id: cache-dependencies
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
+      - name: Install Dependencies
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: |
+          yarn install --force --non-interactive
+        env:
+          CI: true
+      - name: Run Integration Tests
+        run: |
+          yarn test
+      - name: Run Codecov
+        run: |
+          yarn codecov -t ${{ secrets.CODECOV_TOKEN }}
