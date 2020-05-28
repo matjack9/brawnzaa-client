@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { RouteComponentProps } from '@reach/router';
 import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import { ExternalURL, Email } from 'common/utils/constants/urls';
+import BackToTopButton from 'common/components/buttons/BackToTop';
 
 export const TermsAndConditions: React.FC<RouteComponentProps> = () => (
   <Container maxWidth="lg">
@@ -550,5 +552,10 @@ export const TermsAndConditions: React.FC<RouteComponentProps> = () => (
         </Link>
       </Typography>
     </ul>
+    <Grid container justify="flex-end">
+      <Grid item>
+        <BackToTopButton />
+      </Grid>
+    </Grid>
   </Container>
 );
