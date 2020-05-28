@@ -31,7 +31,8 @@ export const Home: React.FC<RouteComponentProps> = () => {
           color="primary"
           gutterBottom
         >
-          {getCountdownText(timeLeft)}
+          {getCountdownText(timeLeft) ||
+            'The threads bundled by the laws of causality have now been bound.'}
         </Typography>
       </div>
     </>
