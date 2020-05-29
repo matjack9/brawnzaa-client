@@ -13,6 +13,7 @@ Open-source frontend of Brawnzaa web application
 - Deploy
 - Set up GitHub CI/CD
 - Add GitHub badges: website up, version, build status
+- Check breakpoints on mobile
 - Set up project management tool
 - Move static assets to CDN
 - SEO
