@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Router, RouteComponentProps } from '@reach/router';
-import { MediaRoute } from 'common/utils/constants/routes';
+import { MediaRoute } from 'common/constants/routes';
 import WIP from 'common/components/views/WIP';
 
 const Media: React.FC<RouteComponentProps> = () => (

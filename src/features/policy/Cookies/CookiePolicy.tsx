@@ -4,7 +4,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-import { ExternalURL, Email } from 'common/utils/constants/urls';
+import { ExternalURL, Email } from 'common/constants/urls';
 import ScrollToTopButton from 'common/components/buttons/ScrollToTop';
 
 export const CookiePolicy: React.FC<RouteComponentProps> = () => (

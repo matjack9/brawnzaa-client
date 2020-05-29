@@ -6,7 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import NavButton from '../NavButton';
 import NoAuthOptions from './NoAuthOptions';
 import AuthedOptions from './AuthedOptions';
-import { Route } from 'common/utils/constants/routes';
+import { Route } from 'common/constants/routes';
 import { selectIsLoggedIn } from 'app/reducers/authReducer';
 import brawnzaa from 'assets/logos/brawnzaa-logo.png';
 

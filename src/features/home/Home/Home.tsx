@@ -3,7 +3,7 @@ import { RouteComponentProps } from '@reach/router';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import useCountdown from 'common/hooks/useCountdown';
-import { NEXT_BRAWNZAA_DATETIME } from 'common/utils/constants/dates';
+import { NEXT_BRAWNZAA_DATETIME } from 'common/constants/dates';
 import { getCountdownText } from 'common/utils/dates';
 
 const useStyles = makeStyles(() =>

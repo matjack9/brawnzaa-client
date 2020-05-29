@@ -1,4 +1,4 @@
-import { Route, RelativeRoute } from './constants/routes';
+import { Route, RelativeRoute } from '../constants/routes';
 
 const getNormalizedRelativeRoute = (relativeRoute: string) =>
   relativeRoute.startsWith('/')

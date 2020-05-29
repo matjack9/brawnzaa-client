@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { createStyles, makeStyles } from '@material-ui/core';
 import NavButton from '../../NavButton';
-import { Route } from 'common/utils/constants/routes';
+import { Route } from 'common/constants/routes';
 import { selectIsLoggedIn } from 'app/reducers/authReducer';
 
 const useStyles = makeStyles(theme =>

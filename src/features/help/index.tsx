@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Router, RouteComponentProps } from '@reach/router';
-import { HelpRoute } from 'common/utils/constants/routes';
+import { HelpRoute } from 'common/constants/routes';
 import WIP from 'common/components/views/WIP';
 
 const Help: React.FC<RouteComponentProps> = () => (

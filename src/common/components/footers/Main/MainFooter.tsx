@@ -17,13 +17,8 @@ import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
-import {
-  Route,
-  HelpRoute,
-  EventsRoute,
-  PolicyRoute,
-} from 'common/utils/constants/routes';
-import { ExternalURL } from 'common/utils/constants/urls';
+import { Route, HelpRoute, EventsRoute, PolicyRoute } from 'common/constants/routes';
+import { ExternalURL } from 'common/constants/urls';
 import { getAbsoluteRoute } from 'common/utils/routes';
 import red from '@material-ui/core/colors/red';
 

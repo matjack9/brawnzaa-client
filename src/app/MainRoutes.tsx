@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Router, RouteComponentProps } from '@reach/router';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { Route } from 'common/utils/constants/routes';
+import { Route } from 'common/constants/routes';
 import ErrorBoundary from 'common/components/wrappers/ErrorBoundary';
 import Skeleton from 'common/components/views/Skeleton';
 import MainNav from 'common/components/navs/Main';

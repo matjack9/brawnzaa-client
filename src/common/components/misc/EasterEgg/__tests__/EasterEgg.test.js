@@ -6,7 +6,7 @@ import {
   waitForElementToBeRemoved,
 } from '@testing-library/react';
 import { EasterEgg } from '../EasterEgg';
-import { KONAMI_CODES } from 'common/utils/constants/misc';
+import { KONAMI_CODES } from 'common/constants/misc';
 
 describe('<EasterEgg />', () => {
   beforeEach(() => {

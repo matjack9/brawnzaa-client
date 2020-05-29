@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Router, RouteComponentProps } from '@reach/router';
-import { PolicyRoute } from 'common/utils/constants/routes';
+import { PolicyRoute } from 'common/constants/routes';
 import TermsAndConditions from './Terms';
 import PrivacyPolicy from './Privacy';
 import CookiePolicy from './Cookies';

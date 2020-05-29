@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { KONAMI_CODES } from 'common/utils/constants/misc';
+import { KONAMI_CODES } from 'common/constants/misc';
 
 export const useKonamiCode = () => {
   const stateHandler = React.useState(false);

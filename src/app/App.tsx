@@ -5,7 +5,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import configureStore from 'app/configureStore';
 import theme from 'common/styles/theme';
-import { Route } from 'common/utils/constants/routes';
+import { Route } from 'common/constants/routes';
 import ErrorBoundary from 'common/components/wrappers/ErrorBoundary';
 import Skeleton from 'common/components/views/Skeleton';
 import MainRoutes from 'app/MainRoutes';

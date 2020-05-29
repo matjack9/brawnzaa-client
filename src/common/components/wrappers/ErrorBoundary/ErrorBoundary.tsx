@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { __PROD__ } from 'common/utils/constants/config';
+import { __PROD__ } from 'common/constants/config';
 import Crash from 'common/components/views/Crash';
 
 interface Props {}

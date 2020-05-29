@@ -1,5 +1,5 @@
 import { navigate } from '@reach/router';
-import { Route } from 'common/utils/constants/routes';
+import { Route } from 'common/constants/routes';
 import { User } from 'types';
 import { LOGIN_USER, LOGOUT_USER, AuthActionTypes } from './authTypes';
 

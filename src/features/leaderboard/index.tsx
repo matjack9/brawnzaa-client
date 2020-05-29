@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Router, RouteComponentProps } from '@reach/router';
-import { LeaderboardRoute } from 'common/utils/constants/routes';
+import { LeaderboardRoute } from 'common/constants/routes';
 import WIP from 'common/components/views/WIP';
 
 const Leaderboard: React.FC<RouteComponentProps> = () => (
