@@ -18,6 +18,10 @@ const Login = React.lazy(() =>
   import(/* webpackChunkName: 'login' */ 'features/login')
 );
 
+const ResetPassword = React.lazy(() =>
+  import(/* webpackChunkName: 'resetPassword' */ 'features/resetPassword')
+);
+
 const store = configureStore();
 
 const App: React.FC = () => (
@@ -30,6 +34,7 @@ const App: React.FC = () => (
             <Router>
               <Signup path={Route.SIGN_UP} />
               <Login path={Route.LOG_IN} />
+              <ResetPassword path={Route.RESET_PASSWORD} />
               <MainRoutes path="/*" />
             </Router>
           </React.Suspense>
