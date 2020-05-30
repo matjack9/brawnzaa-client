@@ -1,5 +1,6 @@
 {
   "name": "brawnzaa-client",
+  "author": "Matt Jackson <matt@brawnzaa.com>",
   "version": "0.1.0",
   "description": "welcome struggler",
   "private": true,
