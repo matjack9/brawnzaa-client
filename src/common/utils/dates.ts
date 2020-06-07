@@ -1,5 +1,4 @@
 type DisplayConfig = Partial<{
-  years: boolean;
   days: boolean;
   hours: boolean;
   minutes: boolean;
