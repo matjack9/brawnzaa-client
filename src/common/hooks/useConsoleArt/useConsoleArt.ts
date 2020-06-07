@@ -16,7 +16,7 @@ const ASCII_ART =
 const KONAMI_CODE_CTA = 'Show me the Konami Code.';
 
 const KONAMI_CODE_LINK =
-  'https://www.howtogeek.com/659611/what-is-the-konami-code-and-how-do-you-use-it/#:~:text=Up%2C%20Up%2C%20Down%2C%20Down,cheats%20that%20help%20you%20win.';
+  'https://www.howtogeek.com/659611/what-is-the-konami-code-and-how-do-you-use-it/#:~:text=Up%2C%20Up%2C%20Down%2C%20Down,cheats%20that%20help%20you%20win';
 
 export const useConsoleArt = () => {
   React.useEffect(() => {
@@ -41,7 +41,7 @@ export const useConsoleArt = () => {
 
       /* eslint-disable-next-line no-console */
       console.log(
-        `%c * for the ignorant: ${KONAMI_CODE_LINK}`,
+        `%c * ignorant? => ${KONAMI_CODE_LINK}`,
         'color: grey; font-size: x-small;'
       );
 
