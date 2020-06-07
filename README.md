@@ -3,7 +3,7 @@
 [![codecov](https://codecov.io/gh/matjack9/brawnzaa-client/branch/master/graph/badge.svg)](https://codecov.io/gh/matjack9/brawnzaa-client)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-Open-source frontend of Brawnzaa web application
+Open-source react frontend of Brawnzaa web application
 
 ## Planning
 
