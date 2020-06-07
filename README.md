@@ -1,8 +1,8 @@
 # BRAWNZAA
 
-[![codecov](https://codecov.io/gh/matjack9/brawnzaa-client/branch/master/graph/badge.svg)](https://codecov.io/gh/matjack9/brawnzaa-client)
 [![Build](https://github.com/matjack9/brawnzaa-client/workflows/Build/badge.svg)](https://github.com/matjack9/brawnzaa-client/actions?query=workflow%3ABuild)
 [![Website brawnzaa.com](https://img.shields.io/website-up-down-green-red/https/www.brawnzaa.com.svg)](https://www.brawnzaa.com)
+[![codecov](https://codecov.io/gh/matjack9/brawnzaa-client/branch/master/graph/badge.svg)](https://codecov.io/gh/matjack9/brawnzaa-client)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 Open-source react frontend of Brawnzaa web application
