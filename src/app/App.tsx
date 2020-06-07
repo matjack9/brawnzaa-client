@@ -9,6 +9,7 @@ import { Route } from 'common/constants/routes';
 import ErrorBoundary from 'common/components/wrappers/ErrorBoundary';
 import Skeleton from 'common/components/views/Skeleton';
 import MainRoutes from 'app/MainRoutes';
+import useConsoleArt from 'common/hooks/useConsoleArt';
 
 const Signup = React.lazy(() =>
   import(/* webpackChunkName: 'signup' */ 'features/signup')
@@ -24,24 +25,27 @@ const ResetPassword = React.lazy(() =>
 
 const store = configureStore();
 
-const App: React.FC = () => (
-  <ErrorBoundary>
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <>
-          <CssBaseline />
-          <React.Suspense fallback={<Skeleton.Generic />}>
-            <Router>
-              <Signup path={Route.SIGN_UP} />
-              <Login path={Route.LOG_IN} />
-              <ResetPassword path={Route.RESET_PASSWORD} />
-              <MainRoutes path="/*" />
-            </Router>
-          </React.Suspense>
-        </>
-      </ThemeProvider>
-    </Provider>
-  </ErrorBoundary>
-);
+const App: React.FC = () => {
+  useConsoleArt();
+  return (
+    <ErrorBoundary>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <>
+            <CssBaseline />
+            <React.Suspense fallback={<Skeleton.Generic />}>
+              <Router>
+                <Signup path={Route.SIGN_UP} />
+                <Login path={Route.LOG_IN} />
+                <ResetPassword path={Route.RESET_PASSWORD} />
+                <MainRoutes path="/*" />
+              </Router>
+            </React.Suspense>
+          </>
+        </ThemeProvider>
+      </Provider>
+    </ErrorBoundary>
+  );
+};
 
 export default App;
