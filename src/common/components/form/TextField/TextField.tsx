@@ -6,9 +6,11 @@ import { InputBaseComponentProps } from '@material-ui/core/InputBase';
 import { useFormContext, FieldValidator } from '../Form';
 import { DEFAULT_INPUT_ERROR } from 'common/constants/errors';
 
-type Props = MuiTextFieldProps & { name: string } & { validate?: FieldValidator };
+export type TextFieldProps = MuiTextFieldProps & { name: string } & {
+  validate?: FieldValidator;
+};
 
-export const TextField: React.FC<Props> = props => {
+export const TextField: React.FC<TextFieldProps> = props => {
   const { name, validate, ...rest } = props;
   const formComposer = useFormContext();
   const {

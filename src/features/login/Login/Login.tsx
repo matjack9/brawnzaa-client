@@ -8,12 +8,9 @@ import Typography from '@material-ui/core/Typography';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
-import IconButton from '@material-ui/core/IconButton';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import ShowPasswordIcon from '@material-ui/icons/Visibility';
-import HidePasswordIcon from '@material-ui/icons/VisibilityOff';
 import Form from 'common/components/form/Form';
 import TextField from 'common/components/form/TextField';
+import PasswordField from 'common/components/inputs/Password';
 import useRedirectIfAuthed from 'common/hooks/useRedirectIfAuthed';
 import { Route } from 'common/constants/routes';
 import Copyright from 'common/components/misc/Copyright';
@@ -24,7 +21,6 @@ import brawnzaaB from 'assets/logos/brawnzaa-b-logo.png';
 interface Values {
   email: string;
   password: string;
-  isPasswordHidden: boolean;
   isRemembering: boolean;
 }
 
@@ -61,7 +57,6 @@ export const Login: React.FC<RouteComponentProps> = () => {
   const initialValues: Values = {
     email: '',
     password: '',
-    isPasswordHidden: true,
     isRemembering: false,
   };
 
@@ -89,53 +84,25 @@ export const Login: React.FC<RouteComponentProps> = () => {
             }}
             initialValues={initialValues}
           >
-            {({ values, handleChange, setFieldValue, isSubmitting }) => (
+            {({ values, handleChange, isSubmitting }) => (
               <>
                 <TextField
                   variant="outlined"
                   margin="normal"
                   required
                   fullWidth
-                  id="email"
                   label="Email Address"
                   type="email"
                   name="email"
                   autoComplete="email"
                   autoFocus
                 />
-                <TextField
+                <PasswordField
                   variant="outlined"
                   margin="normal"
                   required
                   fullWidth
                   name="password"
-                  label="Password"
-                  type={values.isPasswordHidden ? 'password' : 'text'}
-                  id="password"
-                  autoComplete="current-password"
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <IconButton
-                          aria-label="toggle password visibility"
-                          onClick={() =>
-                            setFieldValue(
-                              'isPasswordHidden',
-                              !values.isPasswordHidden,
-                              false
-                            )
-                          }
-                          onMouseDown={event => event.preventDefault()}
-                        >
-                          {values.isPasswordHidden ? (
-                            <HidePasswordIcon />
-                          ) : (
-                            <ShowPasswordIcon />
-                          )}
-                        </IconButton>
-                      </InputAdornment>
-                    ),
-                  }}
                 />
                 <FormControlLabel
                   control={<Checkbox color="primary" />}
@@ -152,7 +119,7 @@ export const Login: React.FC<RouteComponentProps> = () => {
                   color="primary"
                   className={classes.submit}
                 >
-                  Sign In
+                  Log In
                 </LoadingButton>
               </>
             )}
