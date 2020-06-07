@@ -140,8 +140,12 @@ export const Login: React.FC<RouteComponentProps> = () => {
             <Box mt={2}>
               <Copyright />
             </Box>
-            <Box mt={3}>
-              <GoBackButton />
+            <Box mt={6}>
+              <Grid container justify="center">
+                <Grid item>
+                  <GoBackButton />
+                </Grid>
+              </Grid>
             </Box>
           </div>
         </div>
