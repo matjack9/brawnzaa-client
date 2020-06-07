@@ -20,7 +20,7 @@ const Login = React.lazy(() =>
 );
 
 const ResetPassword = React.lazy(() =>
-  import(/* webpackChunkName: 'resetPassword' */ 'features/resetPassword')
+  import(/* webpackChunkName: 'reset-password' */ 'features/resetPassword')
 );
 
 const store = configureStore();
