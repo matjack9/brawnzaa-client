@@ -122,6 +122,8 @@ export const MainFooter: React.FC = () => {
           <Grid item xs={2}>
             <Header>More</Header>
             <List dense>
+              <ListLink to={Route.SIGN_UP}>Sign Up</ListLink>
+              <ListLink to={Route.LOG_IN}>Log In</ListLink>
               <ListLink to={getAbsoluteRoute(Route.HELP, HelpRoute.GUIDE)}>
                 Gains
               </ListLink>
