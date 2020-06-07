@@ -22,7 +22,7 @@ export const useConsoleArt = () => {
       console.clear();
 
       /* eslint-disable-next-line no-console */
-      console.log(`%c ${WELCOME_TEXT}`, 'background: black; color: white');
+      console.log(`%c ${WELCOME_TEXT}`, 'background: black; color: grey');
 
       /* eslint-disable-next-line no-console */
       console.log(`%c ${ASCII_ART}`, 'font-weight: bold; color: red');
