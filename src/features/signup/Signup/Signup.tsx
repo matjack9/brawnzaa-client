@@ -19,7 +19,7 @@ import GoBackButton from 'common/components/buttons/GoBack';
 import brawnzaaB from 'assets/logos/brawnzaa-b-logo.png';
 
 interface Values {
-  username: string;
+  handle: string;
   email: string;
   password: string;
   isEmailOptIn: boolean;
@@ -50,7 +50,7 @@ export const Signup: React.FC<RouteComponentProps> = () => {
   useRedirectIfAuthed();
 
   const initialValues: Values = {
-    username: '',
+    handle: '',
     email: '',
     password: '',
     isEmailOptIn: false,
@@ -73,7 +73,7 @@ export const Signup: React.FC<RouteComponentProps> = () => {
           formProps={{ className: classes.form }}
           onSubmit={(values, actions) => {
             /* eslint-disable-next-line no-alert */
-            alert(`Sorry ${values.username}. Maybe you should get stronger first.`);
+            alert(`Sorry ${values.handle}. Maybe you should get stronger first.`);
             actions.setSubmitting(false);
           }}
           initialValues={initialValues}
@@ -86,9 +86,9 @@ export const Signup: React.FC<RouteComponentProps> = () => {
                     variant="outlined"
                     required
                     fullWidth
-                    label="Username"
-                    name="username"
-                    autoComplete="username"
+                    label="Handle"
+                    name="handle"
+                    autoComplete="handle"
                     autoFocus
                   />
                 </Grid>
