@@ -12,9 +12,7 @@ Open-source react frontend of Brawnzaa web application
 - Implement auth (including skeletons)
 - Add e2e tests (Cypress)
 - Add logging
-- Deploy
-- Set up GitHub CI/CD
-- Add GitHub badges: website up, version, build status
+- Set up GitHub CD
 - Check breakpoints on mobile
 - Set up project management tool
 - Move static assets to CDN
