@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useSelector } from 'react-redux';
 import { Link as RouterLink, LinkProps as RouterLinkProps } from '@reach/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -17,10 +18,11 @@ import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
+import red from '@material-ui/core/colors/red';
 import { Route, HelpRoute, EventsRoute, PolicyRoute } from 'common/constants/routes';
 import { ExternalURL } from 'common/constants/urls';
 import { getAbsoluteRoute } from 'common/utils/routes';
-import red from '@material-ui/core/colors/red';
+import { selectIsLoggedIn } from 'app/reducers/authReducer';
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -89,6 +91,7 @@ const IconLink: React.FC<{ url: string; icon: IconDefinition }> = props => {
 
 export const MainFooter: React.FC = () => {
   const classes = useStyles();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <footer className={classes.footer}>
       <Container>
@@ -122,8 +125,8 @@ export const MainFooter: React.FC = () => {
           <Grid item xs={2}>
             <Header>More</Header>
             <List dense>
-              <ListLink to={Route.SIGN_UP}>Sign Up</ListLink>
-              <ListLink to={Route.LOG_IN}>Log In</ListLink>
+              {isLoggedIn ? null : <ListLink to={Route.SIGN_UP}>Sign Up</ListLink>}
+              {isLoggedIn ? null : <ListLink to={Route.LOG_IN}>Log In</ListLink>}
               <ListLink to={getAbsoluteRoute(Route.HELP, HelpRoute.GUIDE)}>
                 Gains
               </ListLink>
