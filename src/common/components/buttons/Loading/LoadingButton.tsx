@@ -16,12 +16,14 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-interface Props extends ButtonProps {
+export interface LoadingButtonProps extends ButtonProps {
   isLoading: boolean;
   CircularProgressProps?: CircularProgressProps;
+  /** Issue with @material-ui/core": 4.9.13 not spreading properly */
+  component?: React.ReactNode;
 }
 
-export const LoadingButton: React.FC<Props> = props => {
+export const LoadingButton: React.FC<LoadingButtonProps> = props => {
   const {
     isLoading,
     children,

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { createStyles, makeStyles } from '@material-ui/core';
-import NavButton from '../../NavButton';
+import LoadingNavButton from '../../LoadingNavButton';
 import { Route } from 'common/constants/routes';
-import { selectIsLoggedIn } from 'app/reducers/authReducer';
+import { selectIsLoggedIn, selectIsAuthLoading } from 'app/reducers/authReducer';
 
 const useStyles = makeStyles(theme =>
   createStyles({
@@ -20,6 +20,7 @@ const useStyles = makeStyles(theme =>
 export const MainNavNoAuthOptions: React.FC = () => {
   const classes = useStyles();
   const isLoggedIn = useSelector(selectIsLoggedIn);
+  const isLoading = useSelector(selectIsAuthLoading);
 
   if (isLoggedIn) {
     return null;
@@ -28,24 +29,27 @@ export const MainNavNoAuthOptions: React.FC = () => {
   return (
     <ul className={classes.noListStyle}>
       <li className={classes.option}>
-        <NavButton
+        <LoadingNavButton
           className={classes.action}
           variant="contained"
           color="primary"
           to={Route.SIGN_UP}
+          isLoading={isLoading}
         >
           Sign Up
-        </NavButton>
+        </LoadingNavButton>
       </li>
       <li className={classes.option}>
-        <NavButton
+        <LoadingNavButton
           className={[classes.action, classes.bolderBorder].join(' ')}
           variant="outlined"
           color="secondary"
           to={Route.LOG_IN}
+          isLoading={isLoading}
+          CircularProgressProps={{ color: 'secondary' }}
         >
           Log In
-        </NavButton>
+        </LoadingNavButton>
       </li>
     </ul>
   );
