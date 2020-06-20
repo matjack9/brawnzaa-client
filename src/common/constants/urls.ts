@@ -21,3 +21,6 @@ export enum Email {
   BILLING = 'billing@brawnzaa.com',
   DEV = 'dev@brawnzaa.com',
 }
+
+export const STOCK_FITNESS_ALBUM_URL =
+  'https://source.unsplash.com/collection/8431698/';
