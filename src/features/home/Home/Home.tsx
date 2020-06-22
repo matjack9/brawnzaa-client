@@ -8,7 +8,8 @@ import { getCountdownText } from 'common/utils/dates';
 
 const useStyles = makeStyles(() =>
   createStyles({
-    distinguish: { padding: '3em' },
+    headline: { letterSpacing: '.5em' },
+    content: { padding: '3em' },
   })
 );
 
@@ -17,13 +18,18 @@ export const Home: React.FC<RouteComponentProps> = () => {
   const timeLeft = useCountdown(NEXT_BRAWNZAA_DATETIME);
   return (
     <>
-      <Typography variant="h1" align="center" gutterBottom>
-        B R A W N Z A A
+      <Typography
+        variant="h1"
+        align="center"
+        className={classes.headline}
+        gutterBottom
+      >
+        BRAWNZAA
       </Typography>
       <Typography variant="h2" component="p" align="center" gutterBottom>
         a feat of strength
       </Typography>
-      <div className={classes.distinguish}>
+      <div className={classes.content}>
         <Typography
           variant="h2"
           component="p"
