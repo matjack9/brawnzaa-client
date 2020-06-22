@@ -4,7 +4,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Typography, { TypographyProps } from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
-interface Props {
+export interface FullscreenSkeletonProps {
   TypographyHeadingProps?: TypographyProps;
   SkeletonHeadingProps?: SkeletonProps;
   SkeletonBodyProps?: SkeletonProps;
@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme =>
   })
 );
 
-export const FullscreenSkeleton: React.FC<Props> = props => {
+export const FullscreenSkeleton: React.FC<FullscreenSkeletonProps> = props => {
   const {
     TypographyHeadingProps = {},
     SkeletonHeadingProps = {},
