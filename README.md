@@ -7,17 +7,23 @@
 
 Open-source react frontend of Brawnzaa web application
 
-## Planning
+## Backend API
 
-- Implement auth (including skeletons)
-- Add e2e tests (Cypress)
-- Add logging
-- Set up GitHub CD
-- Check breakpoints on mobile
-- Set up project management tool
-- Move static assets to CDN
-- SEO
-- Add feature flagging
+This project is currently using [Firebase](https://firebase.google.com/) for auth and [Firestore](https://firebase.google.com/docs/firestore) for its document collection.
+
+The production configuration is exposed in the project. This is not a security concern.
+
+As per the [Firebase docs](https://firebase.google.com/docs/projects/learn-more#config-files-objects):
+
+> The content of the Firebase config file is considered public, including your platform-specific ID (entered in the Firebase console setup workflow) and values that are specific to your Firebase project, like your API Key, Realtime Database URL, and Storage bucket name. Given this, use security rules to protect your data and files in Realtime Database, Cloud Firestore, and Cloud Storage.
+
+Additionally:
+
+> For open source projects, we generally do not recommend including your Firebase config file or config object in source control because, in most cases, your users should create their own Firebase projects and point their apps to their own backends.
+
+Auth for the production configuration is only enabled for authorized domains. For local development, you will require your own Firebase project to which to point this frontend.
+
+You can create a new Firebase project [here](https://firebase.google.com/). It is simple to set up, and is free to use for many use cases.
 
 ## Available Scripts
 
