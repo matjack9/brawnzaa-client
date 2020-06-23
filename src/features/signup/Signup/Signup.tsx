@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useSelector } from 'react-redux';
 import { RouteComponentProps, Link as RouterLink } from '@reach/router';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -17,6 +18,7 @@ import Copyright from 'common/components/misc/Copyright';
 import LoadingButton from 'common/components/buttons/Loading';
 import GoBackButton from 'common/components/buttons/GoBack';
 import brawnzaaB from 'assets/logos/brawnzaa-b-logo.png';
+import { selectIsLoggedIn, selectIsAuthLoading } from 'app/reducers/authReducer';
 
 interface Values {
   handle: string;
@@ -47,6 +49,9 @@ const useStyles = makeStyles(theme =>
 export const Signup: React.FC<RouteComponentProps> = () => {
   const classes = useStyles();
 
+  const isLoading = useSelector(selectIsAuthLoading);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+
   useRedirectIfAuthed();
 
   const initialValues: Values = {
@@ -55,6 +60,10 @@ export const Signup: React.FC<RouteComponentProps> = () => {
     password: '',
     isEmailOptIn: false,
   };
+
+  if (isLoggedIn) {
+    return null;
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -122,7 +131,7 @@ export const Signup: React.FC<RouteComponentProps> = () => {
                 </Grid>
               </Grid>
               <LoadingButton
-                isLoading={isSubmitting}
+                isLoading={isSubmitting || isLoading}
                 type="submit"
                 fullWidth
                 variant="contained"
@@ -148,7 +157,7 @@ export const Signup: React.FC<RouteComponentProps> = () => {
       <Box mt={3}>
         <Grid container justify="center">
           <Grid item>
-            <GoBackButton />
+            <GoBackButton variant="text" />
           </Grid>
         </Grid>
       </Box>

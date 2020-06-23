@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { RouteComponentProps, Link as RouterLink } from '@reach/router';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -16,7 +17,13 @@ import { Route } from 'common/constants/routes';
 import Copyright from 'common/components/misc/Copyright';
 import LoadingButton from 'common/components/buttons/Loading';
 import GoBackButton from 'common/components/buttons/GoBack';
+import { STOCK_FITNESS_ALBUM_URL } from 'common/constants/urls';
 import brawnzaaB from 'assets/logos/brawnzaa-b-logo.png';
+import {
+  loginWithEmailAndPassword,
+  selectIsAuthLoading,
+  selectIsLoggedIn,
+} from 'app/reducers/authReducer';
 
 interface Values {
   email: string;
@@ -28,7 +35,7 @@ const useStyles = makeStyles(theme =>
   createStyles({
     root: { height: '100vh' },
     image: {
-      backgroundImage: 'url(https://source.unsplash.com/collection/8431698/)',
+      backgroundImage: `url(${STOCK_FITNESS_ALBUM_URL})`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
@@ -51,14 +58,22 @@ const useStyles = makeStyles(theme =>
 
 export const Login: React.FC<RouteComponentProps> = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  const isLoading = useSelector(selectIsAuthLoading);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   useRedirectIfAuthed();
 
   const initialValues: Values = {
     email: '',
     password: '',
-    isRemembering: false,
+    isRemembering: true,
   };
+
+  if (isLoggedIn) {
+    return null;
+  }
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -78,8 +93,13 @@ export const Login: React.FC<RouteComponentProps> = () => {
           <Form
             formProps={{ className: classes.form }}
             onSubmit={(values, actions) => {
-              /* eslint-disable-next-line no-alert */
-              alert(`Sorry ${values.email}. Maybe you should get stronger first.`);
+              dispatch(
+                loginWithEmailAndPassword(
+                  values.email,
+                  values.password,
+                  values.isRemembering
+                )
+              );
               actions.setSubmitting(false);
             }}
             initialValues={initialValues}
@@ -112,7 +132,7 @@ export const Login: React.FC<RouteComponentProps> = () => {
                   onChange={handleChange}
                 />
                 <LoadingButton
-                  isLoading={isSubmitting}
+                  isLoading={isSubmitting || isLoading}
                   type="submit"
                   fullWidth
                   variant="contained"
@@ -143,7 +163,7 @@ export const Login: React.FC<RouteComponentProps> = () => {
             <Box mt={6}>
               <Grid container justify="center">
                 <Grid item>
-                  <GoBackButton />
+                  <GoBackButton variant="text" />
                 </Grid>
               </Grid>
             </Box>
